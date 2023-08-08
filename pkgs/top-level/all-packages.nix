@@ -31778,6 +31778,8 @@ with pkgs;
     wmClass = "firefox-devedition";
   };
 
+  firefoxpwa = callPackage ../tools/networking/firefoxpwa { };
+
   librewolf-unwrapped = callPackage ../applications/networking/browsers/librewolf { };
 
   librewolf = wrapFirefox librewolf-unwrapped {

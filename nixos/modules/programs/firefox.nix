@@ -202,6 +202,7 @@ in
       browserpass = "Browserpass support";
       bukubrow = "Bukubrow support";
       euwebid = "Web eID support";
+      firefoxpwa = "Progressive Web App support";
       ff2mpv = "ff2mpv support";
       fxCast = "fx_cast support";
       gsconnect = "GSConnect support";
@@ -233,6 +234,7 @@ in
     nixpkgs.config.firefox = {
       enableBrowserpass = nmh.browserpass;
       enableBukubrow = nmh.bukubrow;
+      enableFirefoxPwa = nmh.firefoxpwa;
       enableTridactylNative = nmh.tridactyl;
       enableUgetIntegrator = nmh.ugetIntegrator;
       enableFXCastBridge = nmh.fxCast;

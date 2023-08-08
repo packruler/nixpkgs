@@ -17,6 +17,7 @@
 , sndio
 , libjack2
 , speechd
+, firefoxpwa
 }:
 
 ## configurability of the wrapper itself
@@ -70,6 +71,7 @@ let
           ++ lib.optional (cfg.enableUgetIntegrator or false) uget-integrator
           ++ lib.optional (cfg.enablePlasmaBrowserIntegration or false) plasma5Packages.plasma-browser-integration
           ++ lib.optional (cfg.enableFXCastBridge or false) fx-cast-bridge
+          ++ lib.optional (cfg.enableFirefoxPwa or false) firefoxpwa.unwrapped
           ++ extraNativeMessagingHosts
         ;
       libs =   lib.optionals stdenv.isLinux [ udev libva mesa libnotify xorg.libXScrnSaver cups pciutils ]
@@ -392,6 +394,13 @@ let
         #   END EXTRA PREF CHANGES  #
         #                           #
         #############################
+
+        ${lib.optionalString (cfg.enableFirefoxPwa or false) ''
+          # firefoxpwa needs to be in PATH too to have the generated .desktop entries working
+          makeWrapper ${firefoxpwa.fhs}/bin/firefoxpwa $out/bin/firefoxpwa \
+          --prefix LD_LIBRARY_PATH ':' "$libs" \
+          --suffix-each GTK_PATH ':' "$gtk_modules"
+        ''}
       '';
 
       preferLocalBuild = true;
