@@ -28,9 +28,9 @@ let
     cargoLock = {
       lockFile = "${unwrapped.src}/Cargo.lock";
       outputHashes = {
-         "data-url-0.1.0" = "sha256-rESQz5jjNpVfIuTaRCAV2TLeUs09lOaLZVACsb/3Adg=";
+         "data-url-0.3.0" = "sha256-SDOOwwvZrX4i04NElBJe5NRS9MXCgRVhBz7L4G8B4m8=";
          "mime-0.4.0-a.0" = "sha256-LjM7LH6rL3moCKxVsA+RUL9lfnvY31IrqHa9pDIAZNE=";
-         "web_app_manifest-0.0.0" = "sha256-CpND9SxPwFmXe6fINrvd/7+HHzESh/O4GMJzaKQIjc8=";
+         "web_app_manifest-0.0.0" = "sha256-G+kRN8AEmAY1TxykhLmgoX8TG8y2lrv7SCRJlNy0QzA=";
        };
     };
 
