@@ -10,7 +10,7 @@
 , lib
 }:
 let
-  version = "2.5.0";
+  version = "2.7.3";
   dir = "native";
   source = fetchFromGitHub {
     owner = "filips123";
