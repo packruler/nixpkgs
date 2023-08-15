@@ -11,13 +11,12 @@
 }:
 let
   version = "2.7.3";
-  dir = "native";
   source = fetchFromGitHub {
     owner = "filips123";
     repo = "PWAsForFirefox";
     rev = "v${version}";
-    sha256 = "sha256-bGju7nCc/WQUrtI6M4+ysZge0VxDeqXz8dDszdTc9GA=";
-    sparseCheckout = [ dir ];
+    sha256 = "sha256-TCqSrJqq6QLPFpNdLruTI1uYrV3cQvHFomhbCSrvSic=";
+    sparseCheckout = [ "native" ];
   };
   pname = "firefoxpwa";
 
@@ -25,7 +24,7 @@ let
     inherit version;
     pname = "${pname}-unwrapped";
 
-    src = "${source}/${dir}";
+    src = "${source}/native";
     cargoLock = {
       lockFile = "${unwrapped.src}/Cargo.lock";
       outputHashes = {
